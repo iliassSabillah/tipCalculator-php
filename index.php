@@ -5,7 +5,6 @@
   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <script src="jquery-3.1.1.min.js" defer></script>
     <link type='text/css' rel='stylesheet' href='style.css'/>
   <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -41,9 +40,8 @@
             <form method='post'>
               <?php 
                 function get_option($input) {
-                  // get the value from the $defaults array
+                  //default input value
                   $val = 0;
-
                   // but if the same value has already been posted - replace the default one
                   if (isset($_POST[$input])) {
                     $val = $_POST[$input];
@@ -52,16 +50,13 @@
                 }
 
                 echo "<span>Bill subtotal: $</span><input class='form-control' type='text' placeholder='Total Bill' name='subtotal' value='".get_option('subtotal')."'>";
-
               ?>
               <br>
               Tip percentage:
               <br>
               <div class='radio-inline'>
                 <?php 
-                   
                       include 'radio.php';
-                    
                  ?> 
               </div>
               <br>
@@ -74,7 +69,7 @@
             <div class="results">
               <?php 
                if ( isset( $_POST['submit'] ) ) {
-                  include 'calculator.php';
+                  include 'result.php';
                   }
                ?>
             </div>
