@@ -1,9 +1,17 @@
   <?php
-      $subtotal = $_POST['subtotal'];
-      $tip = $_POST['tipPercentage'];
-      $tipAmount = ($tip * $subtotal)/100;
-      $total = $subtotal+ $tipAmount;
+      
+      
+      if (empty($_POST["tipPercentage"])) {
+        $tipErr = "Name is required";
+        } else {
+        $tip = $_POST['tipPercentage'];
+        $subtotal = $_POST['subtotal'];
+        // $tip = $_POST['tipPercentage'];
+        $tipAmount = ($tip * $subtotal)/100;
+        $total = $subtotal+ $tipAmount;
+      }
 
+      
       if(isset($tip)){
         echo 
           "<p>

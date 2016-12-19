@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <!-- Bootstrap theme -->
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js does not work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -39,7 +38,7 @@
             </div>
             <form method='post'>
               <?php 
-                function get_option($input) {
+                function get_val($input) {
                   //default input value
                   $val = 0;
                   // but if the same value has already been posted - replace the default one
@@ -49,7 +48,7 @@
                   return $val;
                 }
 
-                echo "<span>Bill subtotal: $</span><input class='form-control' type='text' placeholder='Total Bill' name='subtotal' value='".get_option('subtotal')."'>";
+                echo "<span>Bill subtotal: $</span><input class='form-control' type='text' pattern='[1-9]\d*' placeholder='Total Bill' name='subtotal' value='".get_val('subtotal')."'>";
               ?>
               <br>
               Tip percentage:
