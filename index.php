@@ -60,7 +60,7 @@
               </div>
               <br>
               <br>
-              <button type ='submit' name='submit' class='btn btn-success btn-lg'>Submit
+              <button type ='submit' name='submit' class='btn btn-success btn-lg nohover'>Submit
               </button>
             </form>
             <br>
