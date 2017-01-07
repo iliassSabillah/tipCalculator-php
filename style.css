@@ -29,8 +29,8 @@ body {
   border-color: #FF6363 !important;
 }
 
-.btn-success:hover {
-  outline-style: none;
+.btn-success:not(.nohover) {  
+    border: 1px solid red; 
 }
 
 .results {
