@@ -2,10 +2,11 @@
       
       
       if (empty($_POST["tipPercentage"])) {
-        $tipErr = "Name is required";
+        $tipErr = "Tip is required";
         } else {
         $tip = $_POST['tipPercentage'];
         $subtotal = $_POST['subtotal'];
+        
         // $tip = $_POST['tipPercentage'];
         $tipAmount = ($tip * $subtotal)/100;
         $total = $subtotal+ $tipAmount;

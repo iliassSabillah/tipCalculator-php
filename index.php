@@ -40,14 +40,30 @@
               <?php 
                 function get_val($input) {
                   //default input value
-                  $val = 0;
+                  $val = 100;
                   // but if the same value has already been posted - replace the default one
                   if (isset($_POST[$input])) {
                     $val = $_POST[$input];
                   }
                   return $val;
                 }
-
+                  function get_Custom_val($input) {
+                  //default input value
+                  $val = '';
+                  // but if the same value has already been posted - replace the default one
+                  if (isset($_POST[$input])) {
+                    $val = $_POST[$input];
+                  }
+                  return $val;
+                }
+                function check_radio($input) {
+                    if(isset($_POST['submit'])){
+                        if(isset( $_POST[$input])){     
+                           return 'checked';
+                        }
+                        else return false;
+                    }
+                }
                 echo "<span>Bill subtotal: $</span><input class='form-control' type='text' pattern='[1-9]\d*' placeholder='Total Bill' name='subtotal' value='".get_val('subtotal')."'>";
               ?>
               <br>
@@ -58,6 +74,12 @@
                       include 'radio.php';
                  ?> 
               </div>
+              <br>
+              <label class='radio-inline'>
+                <?php echo "<input type='radio' checked='" . check_radio('tipPercentage'). "' name='tipPercentage' value='" . get_Custom_val('customInput') . "'> Custom
+                <input type='text' name='customInput' width='5px' id='customTip' value='". get_Custom_val('customInput'). "'>% "?>
+              </label>
+              
               <br>
               <br>
               <button type ='submit' name='submit' class='btn btn-success btn-lg nohover'>Submit
